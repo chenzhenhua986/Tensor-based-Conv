@@ -16,7 +16,7 @@ from albumentations.pytorch import ToTensorV2 as ToTensor
 from dataflow import get_train_val_loaders, ignore_mask_boundaries
 from torchvision.models.segmentation import deeplabv3_resnet101, deeplabv3_resnet50, deeplabv3_mobilenet_v3_large, fcn_resnet50, fcn_resnet101, lraspp_mobilenet_v3_large
 from torchvision.models.segmentation import DeepLabV3_MobileNet_V3_Large_Weights, DeepLabV3_ResNet101_Weights
-from net import official_deeplab_resnet, pretrained_backbone_tconv_head, tconv_backbone_conv_head, tconv, tconv1, tconv_fcn, tconv_fcn1, tconv_backbone_tconv_head, tconv_test, tconv_test1
+from net import official_deeplab_resnet, pretrained_backbone_tconv_head, tconv, tconv1, tconv_fcn, tconv_fcn1, tconv_backbone_tconv_head, tconv_test, tconv_test1
 # ##############################
 # Global configs
 # ##############################
@@ -103,7 +103,6 @@ num_classes = 21
 #model =lraspp_mobilenet_v3_large(num_classes=num_classes)
 #model =  torchvision.models.segmentation.deeplabv3_mobilenet_v3_large(weights=DeepLabV3_MobileNet_V3_Large_Weights.COCO_WITH_VOC_LABELS_V1, num_classes=num_classes, aux_loss=True)
 #model =  torchvision.models.segmentation.deeplabv3_mobilenet_v3_large(num_classes=num_classes, aux_loss=False)
-#model = tconv_backbone_conv_head(device, num_classes)
 model = tconv_backbone_tconv_head(device, num_classes)
 #model = official_deeplab_resnet(num_classes)
 #model = pretrained_backbone_tconv_head(device, num_classes)
